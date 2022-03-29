@@ -5,9 +5,10 @@ import React from 'react';
 export default function Notification() {
   // const [status, setStatus] = useState(Notification.permission);
   const status = "test";
-  console.log(Notification);
+  console.log(Notification.permission);
   console.log(status);
   setTimeout(() => console.log(Notification.permission), 1000);
+  setTimeout(() => console.log(Notification.permission), 5000);
     // try {
     //     if (!Notification.permission != "denied") {
     //         Notification.requestPermission().then(result => {
