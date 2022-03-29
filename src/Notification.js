@@ -1,7 +1,7 @@
 import React, { useState } from 'react';
 
 export default function Notification() {
-    const [status, setStatus] = useState(Notification.permission);
+  // const [status, setStatus] = useState(Notification.permission);
   console.log(Notification);
   console.log(status);
   setTimeout(() => console.log(Notification.permission), 1000);
