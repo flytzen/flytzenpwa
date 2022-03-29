@@ -6,7 +6,7 @@ export default function Notification() {
   // const [status, setStatus] = useState(Notification.permission);
   const status = "test";
   console.log(Notification.permission);
-  console.log(status);
+  console.log(window.Notification.permission);
   setTimeout(() => console.log(Notification.permission), 1000);
   setTimeout(() => console.log(Notification.permission), 5000);
     // try {
