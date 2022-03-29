@@ -6,7 +6,7 @@ import {
   Route
 } from "react-router-dom";
 import Api from "./Api"
-import Notification from './Notification';
+import BrowserNotifications from './BrowserNotifications';
 import Home from './Home';
 
 
@@ -26,7 +26,7 @@ function App() {
 
         <Routes>
           <Route path="/api" element={<Api />} />
-          <Route path="/notifications" element={<Notification />} />
+          <Route path="/notifications" element={<BrowserNotifications />} />
           <Route path="/" element={<Home />} />
         </Routes>
       </BrowserRouter>
