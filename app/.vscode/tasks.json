@@ -1,0 +1,19 @@
+{
+	"version": "2.0.0",
+	"tasks": [
+		{
+			"label": "run",
+			"type": "shell",
+			"command": "swa start build --host 0.0.0.0 --api-location http://func:7071",
+			"dependsOn": [
+				"build"
+			],
+			"problemMatcher": []
+		},
+		{
+			"label": "build",
+			"type": "shell",
+			"command": "npm run build"
+		}
+	]
+}

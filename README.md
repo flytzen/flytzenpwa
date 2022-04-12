@@ -4,8 +4,15 @@
 
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
 
-
 ## Requirements
+- Docker
+- Devcontainer extension
+
+### Optional
+One day, the [devcontainer CLI](https://code.visualstudio.com/docs/remote/devcontainer-cli) will make it easier - today is not that day. It doesn't work properly, yet.
+
+
+## OLD !! Requirements
 - npm install -g @azure/static-web-apps-cli
 - npm install -g azure-functions-core-tools@3
 - Extensions:
@@ -21,3 +28,7 @@ This project was bootstrapped with [Create React App](https://github.com/faceboo
   - swa start build --api-location api
 
   ...surely this can be automated better...
+
+
+  ## Moving the function to it's own thing....
+  	swa start ./output-folder --api-location http://localhost:7071  (or just do the function thing separately?)

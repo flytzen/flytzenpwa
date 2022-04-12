@@ -5,7 +5,7 @@ export default function Api() {
 
   useEffect(() => {
     (async function () {
-      const { text } = await( await fetch(`/api/message`)).json();
+      const text =  await (await fetch(`/api/message`)).text();
       setData(text);
       console.log(text);
     })();
