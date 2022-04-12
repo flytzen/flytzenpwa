@@ -2,9 +2,9 @@ import React, { useState } from 'react';
 
 
 export default function BrowserNotifications() {
-  const [status, setStatus] = useState(Notification.permission);
+  const [permissionStatus, setStatus] = useState(Notification.permission);
     try {
-        if (!Notification.permission != "denied") {
+        if (!Notification.permission !== "denied") {
             Notification.requestPermission().then(result => {
               console.log(result);
               setStatus(result);
@@ -15,6 +15,34 @@ export default function BrowserNotifications() {
       console.log(e);
       setStatus(e);
     }
+  
+  const ensurePermissionsNotDenied = (currentPermission) => {
+    if (currentPermission === "denied") {
+      alert("Notifications have been denied");
+      throw new Error("Notifications have been denied");
+    }
+  }
+  
+  const ensurePermissionNotifications = () => {
+    ensurePermissionsNotDenied(Notification.permission);
+    return Notification.requestPermission().then(result => {
+      ensurePermissionsNotDenied(result);
+      if (result === "default") {
+        alert("Notifications permission has not been granted");
+        throw new Error("Notifications permission has not been granted");
+      }
+    });
+  }
+  
+  const notifyNow = () => {
+    ensurePermissionNotifications().then(() => {
+      const notification = new Notification("Hi there", {
+
+      });
+      
+    })
+
+  }
 
   return (
     <div>
@@ -23,9 +51,9 @@ export default function BrowserNotifications() {
       <div>This can also be run from the web worker, which is probably a lot more useful. This demo here requires the website to actually be running.</div>
       <h2>Notifications permission status</h2>
       <hr />
-      <div>{status}</div>
+      <div>{permissionStatus}</div>
       <hr />
-          <div>The Push Notifications API allows a server to send notifications, even when the browser is not running.</div>
+      <button onClick={ notifyNow }>Notify now</button>
     </div>
   );
 }
