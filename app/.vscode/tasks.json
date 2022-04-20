@@ -4,10 +4,7 @@
 		{
 			"label": "run",
 			"type": "shell",
-			"command": "swa start build --host 0.0.0.0 --api-location http://func:7071",
-			"dependsOn": [
-				"build"
-			],
+			"command": "swa start http://localhost:3000 --run='npm start' --host 0.0.0.0 --api-location http://func:7071 --devserver-timeout=90000",
 			"problemMatcher": []
 		},
 		{

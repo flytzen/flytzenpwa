@@ -19,14 +19,14 @@ function App() {
         <nav>
           <ul>
             <li><Link to="/">Home</Link></li>
-            <li><Link to="/api">API</Link></li>
-            <li><Link to="/notifications">Notifications</Link></li>
+            <li><Link to="/funccall">API</Link></li>
+            <li><Link to="/browsernotifications">Notifications</Link></li>
           </ul>
         </nav>
 
         <Routes>
-          <Route path="/api" element={<Api />} />
-          <Route path="/notifications" element={<BrowserNotifications />} />
+          <Route path="/funccall" element={<Api />} />
+          <Route path="/browsernotifications" element={<BrowserNotifications />} />
           <Route path="/" element={<Home />} />
         </Routes>
       </BrowserRouter>
