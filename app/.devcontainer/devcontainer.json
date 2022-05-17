@@ -6,7 +6,9 @@
 	
     "extensions": [
 		"ms-azuretools.vscode-azurestaticwebapps",
+		"pflannery.vscode-versionlens"
 	],
 	"postCreateCommand": "npm install",
-    "remoteUser": "node"
+    "remoteUser": "node",
+	"shutdownAction": "none"
 }
